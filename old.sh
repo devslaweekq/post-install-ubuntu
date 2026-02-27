@@ -1,13 +1,35 @@
 
 # Adding keys
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 rm microsoft.gpg
 # wget -q https://dl-ssl.google.com/linux/linux_signing_key.pub -O- | sudo apt-key add -
 
 # Adding repos
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" >> /etc/apt/sources.list.d/vscode.list'
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg] https://packages.microsoft.com/repos/edge stable main" >> /etc/apt/sources.list.d/microsoft-edge.list'
+sudo tee /etc/apt/sources.list.d/vscode.sources > /dev/null << 'EOF'
+Types: deb
+URIs: https://packages.microsoft.com/repos/vscode
+Suites: stable
+Components: main
+Signed-By: /usr/share/keyrings/microsoft.gpg
+Architectures: amd64
+EOF
+sudo tee /etc/apt/sources.list.d/edge.sources > /dev/null << 'EOF'
+Types: deb
+URIs: https://packages.microsoft.com/repos/edge
+Suites: stable
+Components: main
+Signed-By: /usr/share/keyrings/microsoft.gpg
+Architectures: amd64
+EOF
+# sudo tee /etc/apt/sources.list.d/chrome.sources > /dev/null << 'EOF'
+# Types: deb
+# URIs: http://dl.google.com/linux/chrome/deb/
+# Suites: stable
+# Components: main
+# Architectures: amd64
+# EOF
 # sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
 sudo apt update
