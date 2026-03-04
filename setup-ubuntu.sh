@@ -103,10 +103,11 @@ sudo dpkg --configure -a
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 
 # Install Flatpak packages
+# flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE
 flatpak install -y flathub \
   com.github.tchx84.Flatseal org.onlyoffice.desktopeditors \
   be.alexandervanhee.gradia io.missioncenter.MissionCenter \
-  com.github.wwmm.easyeffects org.kde.krita \
+  com.github.wwmm.easyeffects org.kde.krita me.iepure.devtoolbox \
   com.microsoft.Edge com.mattermost.Desktop \
   io.dbeaver.DBeaverCommunity net.lutris.Lutris \
   net.davidotek.pupgui2 com.usebottles.bottles \
