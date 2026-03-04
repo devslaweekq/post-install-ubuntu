@@ -62,12 +62,12 @@ sudo apt install -y libssl-dev libcurl4-gnutls-dev libexpat1-dev \
 	libinih-dev libdbus-1-dev libsystemd-dev
 
 ## CLI
-sudo apt install -y git git-gui nano neofetch curl wget hwinfo
+sudo apt install -y git git-gui nano curl wget hwinfo neofetch
 
 ## Apps
 sudo apt install -y flatpak krita vlc qbittorrent \
-	sweeper grub-customizer gparted unzip p7zip-rar p7zip-full \
-	rar unrar zip telegram
+	sweeper gparted unzip p7zip-rar p7zip-full \
+	rar unrar zip telegram grub-customizer
 
 sudo apt install -y --fix-broken --install-recommends
 
@@ -90,6 +90,9 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B05498B7
 SCRIPT_DIR=/mnt/d/CRYPTO/post-install-ubuntu
 sudo apt install -y $SCRIPT_DIR/debs/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
 sudo apt install -y $SCRIPT_DIR/debs/ocs-url_3.1.0-0ubuntu1_amd64.deb
+sudo apt install -y $SCRIPT_DIR/debs/figma-linux_0.11.5_linux_amd64.deb
+sudo apt install -y $SCRIPT_DIR/debs/Hiddify-Debian-x64.deb
+sudo apt install -y $SCRIPT_DIR/debs/anilibria_2.2.25_amd64.deb
 sudo apt install --fix-broken -y
 sudo apt install -y -f
 sudo systemctl daemon-reload
@@ -104,10 +107,11 @@ flatpak install -y flathub \
   com.github.tchx84.Flatseal org.onlyoffice.desktopeditors \
   be.alexandervanhee.gradia io.missioncenter.MissionCenter \
   com.github.wwmm.easyeffects org.kde.krita \
-  com.microsoft.Edge com.visualstudio.code \
-  com.mattermost.Desktop io.dbeaver.DBeaverCommunity \
-  net.lutris.Lutris net.davidotek.pupgui2 com.usebottles.bottles \
-  com.github.Matoking.protontricks ru.linux_gaming.PortProton
+  com.microsoft.Edge com.mattermost.Desktop \
+  io.dbeaver.DBeaverCommunity net.lutris.Lutris \
+  net.davidotek.pupgui2 com.usebottles.bottles \
+  com.github.Matoking.protontricks ru.linux_gaming.PortProton \
+  com.visualstudio.code
 
 
   # com.github.sdv43.whaler org.pgadmin.pgadmin4 com.redis.RedisInsight
@@ -118,7 +122,7 @@ flatpak install -y flathub \
 
 # Flatpak permissions
 sudo flatpak override --filesystem=/usr/lib/x86_64-linux-gnu/GL \
-  --filesystem=host --share=network --socket=x11 --socket=wayland \
+  --filesystem=host --share=network --socket=wayland \
   --system-talk-name=org.freedesktop.NetworkManager \
   --system-talk-name=org.freedesktop.resolve1 \
   --talk-name=org.freedesktop.Notifications

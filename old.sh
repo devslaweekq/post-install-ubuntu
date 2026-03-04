@@ -15,6 +15,7 @@ Components: main
 Signed-By: /usr/share/keyrings/microsoft.gpg
 Architectures: amd64
 EOF
+
 sudo tee /etc/apt/sources.list.d/edge.sources > /dev/null << 'EOF'
 Types: deb
 URIs: https://packages.microsoft.com/repos/edge
@@ -23,6 +24,7 @@ Components: main
 Signed-By: /usr/share/keyrings/microsoft.gpg
 Architectures: amd64
 EOF
+
 # sudo tee /etc/apt/sources.list.d/chrome.sources > /dev/null << 'EOF'
 # Types: deb
 # URIs: http://dl.google.com/linux/chrome/deb/
@@ -33,7 +35,7 @@ EOF
 # sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
 sudo apt update
-sudo apt install -y microsoft-edge-stable code
+sudo apt install -y code microsoft-edge-stable 
 sudo apt install -y --fix-broken --install-recommends
 
 
