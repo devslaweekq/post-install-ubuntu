@@ -108,7 +108,7 @@ flatpak install -y flathub \
   com.github.tchx84.Flatseal org.onlyoffice.desktopeditors \
   be.alexandervanhee.gradia io.missioncenter.MissionCenter \
   com.github.wwmm.easyeffects org.kde.krita me.iepure.devtoolbox \
-  com.microsoft.Edge com.mattermost.Desktop \
+  com.microsoft.Edge com.mattermost.Desktop io.github.kolunmi.Bazaar \
   io.dbeaver.DBeaverCommunity net.lutris.Lutris \
   net.davidotek.pupgui2 com.usebottles.bottles \
   com.github.Matoking.protontricks ru.linux_gaming.PortProton \
