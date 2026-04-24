@@ -77,7 +77,7 @@ sudo apt install -y libfuse2t64
 ## For Gnome
 sudo apt install -y gnome-browser-connector gnome-disk-utility \
 	gnome-software-plugin-flatpak gnome-shell-extension-manager \
-	gnome-tweaks chrome-gnome-shell	dconf-editor gnome-shell-extensions
+	gnome-tweaks dconf-editor gnome-shell-extensions chrome-gnome-shell
 
 # Just in case
 echo "Downloading package keys and .deb files..."
@@ -107,7 +107,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/
 flatpak install -y flathub \
   com.github.tchx84.Flatseal org.onlyoffice.desktopeditors \
   be.alexandervanhee.gradia io.missioncenter.MissionCenter \
-  com.github.wwmm.easyeffects org.kde.krita me.iepure.devtoolbox \
+  com.github.wwmm.easyeffects me.iepure.devtoolbox \
   com.microsoft.Edge com.mattermost.Desktop io.github.kolunmi.Bazaar \
   io.dbeaver.DBeaverCommunity net.lutris.Lutris \
   net.davidotek.pupgui2 com.usebottles.bottles \
@@ -151,6 +151,9 @@ sudo usermod -aG vboxusers $(whoami)
 sudo adduser $(whoami) vboxusers
 sudo apt install -y virtualbox-dkms cpu-checker
 
+curl -fsSL https://tailscale.com/install.sh | sh
+curl -fsSL https://claude.ai/install.sh | bash
+curl -fsSL https://opencode.ai/install | bash
 
 ## Remove junk and update
 echo -e "Updating, upgrading and cleaning system..."
