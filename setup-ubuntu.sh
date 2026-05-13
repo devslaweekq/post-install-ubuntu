@@ -9,9 +9,7 @@
 # reboot
 
 sudo apt install -y lsb-release
-## Ubuntu version (number)
-system="`lsb_release -rs`"
-
+echo "script running on $(lsb_release -cs) $(lsb_release -rs)"
 
 ########################## Programs ##################################
 
@@ -62,7 +60,7 @@ sudo apt install -y libssl-dev libcurl4-gnutls-dev libexpat1-dev \
 	libinih-dev libdbus-1-dev libsystemd-dev
 
 ## CLI
-sudo apt install -y git git-gui nano curl wget hwinfo neofetch
+sudo apt install -y git git-gui nano curl wget hwinfo btop
 
 ## Apps
 sudo apt install -y flatpak krita vlc qbittorrent \
@@ -108,13 +106,12 @@ flatpak install -y flathub \
   com.github.tchx84.Flatseal org.onlyoffice.desktopeditors \
   be.alexandervanhee.gradia io.missioncenter.MissionCenter \
   com.github.wwmm.easyeffects me.iepure.devtoolbox \
-  com.microsoft.Edge com.mattermost.Desktop io.github.kolunmi.Bazaar \
+  com.microsoft.Edge com.mattermost.Desktop \
   io.dbeaver.DBeaverCommunity net.lutris.Lutris \
   net.davidotek.pupgui2 com.usebottles.bottles \
-  com.github.Matoking.protontricks ru.linux_gaming.PortProton \
-  com.visualstudio.code
+  com.github.Matoking.protontricks ru.linux_gaming.PortProton
 
-
+  # com.visualstudio.code io.github.kolunmi.Bazaar
   # com.github.sdv43.whaler org.pgadmin.pgadmin4 com.redis.RedisInsight
   # com.github.d4nj1.tlpui com.discordapp.Discord \
   # io.github.mimbrero.WhatsAppDesktop com.obsproject.Studio \
@@ -161,7 +158,6 @@ sudo apt update && sudo apt dist-upgrade -y
 sudo apt autoclean
 sudo apt autoremove -y
 
-
 echo
 echo "############################################"
 echo -e "System and Programs - Done"
@@ -169,14 +165,6 @@ echo "############################################"
 
 
 # $SCRIPT_DIR/install_theme.sh
-
-cd /lib/firmware
-sudo wget https://github.com/beagleboard/mirror-linux-firmware/blob/2f411c10e4570d03426d3cb095471aa1120114ab/iwlwifi-so-a0-gf-a0-89.ucode
-sudo modprobe -r iwlwifi
-sudo modprobe iwlwifi
-sudo dmesg | grep iwlwifi
-cd -
-
 
 # Install Java
 sudo apt update && sudo apt install -y openjdk-17-jdk

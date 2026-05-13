@@ -35,7 +35,7 @@ EOF
 # sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
 sudo apt update
-sudo apt install -y code microsoft-edge-stable 
+sudo apt install -y code microsoft-edge-stable
 sudo apt install -y --fix-broken --install-recommends
 
 
@@ -44,6 +44,14 @@ sudo apt install -y --fix-broken --install-recommends
 # $SCRIPT_DIR/debs/ocs-url_3.1.0-0ubuntu1_amd64.deb
 # wget https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
 # wget https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb
+
+
+# cd /lib/firmware
+# sudo wget https://github.com/beagleboard/mirror-linux-firmware/blob/2f411c10e4570d03426d3cb095471aa1120114ab/iwlwifi-so-a0-gf-a0-89.ucode
+# sudo modprobe -r iwlwifi
+# sudo modprobe iwlwifi
+# sudo dmesg | grep iwlwifi
+# cd -
 
 
 # Install Tenderly CLI
