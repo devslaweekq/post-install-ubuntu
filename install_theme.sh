@@ -21,16 +21,21 @@ sudo apt install -y \
 
 cd ~
 # git clone https://github.com/vinceliuice/grub2-themes.git
-git clone https://github.com/vinceliuice/Elegant-grub2-themes.git
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
-git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
-git clone https://github.com/vinceliuice/McMojave-cursors.git
+git clone https://github.com/vinceliuice/Elegant-grub2-themes.git --depth=1
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1
+git clone https://github.com/vinceliuice/MacTahoe-gtk-theme.git --depth=1
+git clone https://github.com/vinceliuice/MacTahoe-icon-theme.git --depth=1
+git clone https://github.com/vinceliuice/McMojave-cursors.git --depth=1
 
 # chmod +x $HOME/grub2-themes/install.sh
 chmod +x $HOME/Elegant-grub2-themes/install.sh
 chmod +x $HOME/WhiteSur-gtk-theme/install.sh
 chmod +x $HOME/WhiteSur-gtk-theme/tweaks.sh
 chmod +x $HOME/WhiteSur-icon-theme/install.sh
+chmod +x $HOME/MacTahoe-gtk-theme/install.sh
+chmod +x $HOME/MacTahoe-gtk-theme/tweaks.sh
+chmod +x $HOME/MacTahoe-icon-theme/install.sh
 chmod +x $HOME/McMojave-cursors/build.sh
 chmod +x $HOME/McMojave-cursors/install.sh
 # make -C dash-to-dock install
@@ -49,16 +54,25 @@ sudo $HOME/Elegant-grub2-themes/install.sh -t mojave -p sharp -i right -c dark -
 # $HOME/grub2-themes/install.sh -t whitesur -i whitesur -s 2k -b
 
 ## WhiteSur gtk
-$HOME/WhiteSur-gtk-theme/install.sh -c Dark -t all -m --round --black --darker
+$HOME/WhiteSur-gtk-theme/install.sh -c dark -t default -m -l --shell -i apple --round --black --darker
 
 ## WhiteSur Icons
 $HOME/WhiteSur-icon-theme/install.sh -t default -a -b
 
 ## WhiteSur Tweaks
-$HOME/WhiteSur-gtk-theme/tweaks.sh -c Dark -t blue -F -c Dark -t blue
+$HOME/WhiteSur-gtk-theme/tweaks.sh -F -c Dark -t default
 
-sudo flatpak override --filesystem=xdg-config/gtk-3.0 && \
-  sudo flatpak override --filesystem=xdg-config/gtk-4.0
+## MacTahoe gtk
+$HOME/MacTahoe-gtk-theme/install.sh -c dark -t default --shell -i apple --round --darker
+
+## MacTahoe Icons
+$HOME/MacTahoe-icon-theme/install.sh -t default -b
+
+## MacTahoe Tweaks
+$HOME/MacTahoe-gtk-theme/tweaks.sh -F -c Dark -t default
+
+sudo flatpak override --filesystem=xdg-config/gtk-3.0
+sudo flatpak override --filesystem=xdg-config/gtk-4.0
 
 
 ## McMojave cursors
@@ -79,10 +93,15 @@ echo '#################################################################'
 rm -rf $HOME/Elegant-grub2-themes
 rm -rf $HOME/WhiteSur-gtk-theme
 rm -rf $HOME/WhiteSur-icon-theme
-rm -rf $HOME/dash-to-dock
+rm -rf $HOME/MacTahoe-gtk-theme
+rm -rf $HOME/MacTahoe-icon-theme
 rm -rf $HOME/McMojave-cursors
+rm -rf $HOME/dash-to-dock
 rm -rf $HOME/_build
 rm -rf $HOME/dist
+
+sudo apt remove --purge -y yaru-theme-sound  yaru-theme-icon yaru-theme-gtk
+
 
 echo '#################################################################'
 echo 'Read'
