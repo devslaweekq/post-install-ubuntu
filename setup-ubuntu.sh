@@ -43,9 +43,6 @@ sudo apt install --fix-broken -y
 sudo apt autoclean -y
 sudo apt autoremove --purge
 
-# curl -fsSL https://tailscale.com/install.sh | sh
-
-
 ## Programs to be installed with apt
 ## System
 sudo apt install -y ffmpeg net-tools ufw software-properties-common \
@@ -53,7 +50,7 @@ sudo apt install -y ffmpeg net-tools ufw software-properties-common \
 	cmake build-essential g++ gnupg clang dkms ca-certificates \
 	lsb-release bash-completion fonts-firacode ppa-purge pass \
 	xz-utils gcc-multilib pkg-config gdebi gdebi-core ninja-build \
-	dconf-cli # or polkitd:i386  pkexec:i386  polkitd  pkexec
+	dconf-cli ncdu # or polkitd:i386  pkexec:i386  polkitd  pkexec
 
 ## Libs
 sudo apt install -y libssl-dev libcurl4-gnutls-dev libexpat1-dev \
@@ -106,11 +103,12 @@ flatpak install -y flathub \
   com.github.tchx84.Flatseal org.onlyoffice.desktopeditors \
   be.alexandervanhee.gradia io.missioncenter.MissionCenter \
   com.github.wwmm.easyeffects me.iepure.devtoolbox \
-  com.microsoft.Edge com.mattermost.Desktop \
-  io.dbeaver.DBeaverCommunity net.lutris.Lutris \
-  net.davidotek.pupgui2 com.usebottles.bottles \
+  com.mattermost.Desktop \
+  io.dbeaver.DBeaverCommunity net.davidotek.pupgui2 \
+  net.lutris.Lutris com.usebottles.bottles \
   com.github.Matoking.protontricks ru.linux_gaming.PortProton
 
+  # com.microsoft.Edge
   # com.visualstudio.code io.github.kolunmi.Bazaar
   # com.github.sdv43.whaler org.pgadmin.pgadmin4 com.redis.RedisInsight
   # com.github.d4nj1.tlpui com.discordapp.Discord \
