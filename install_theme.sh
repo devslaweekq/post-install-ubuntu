@@ -19,15 +19,15 @@ sudo apt install -y \
   libkf5wayland-dev libwayland-dev libwayland-client0 libqt5waylandclient5-dev \
   qtwayland5-dev-tools plasma-wayland-protocols
 
-# git clone https://github.com/vinceliuice/Elegant-grub2-themes.git --depth=1
+# git clone https://github.com/vinceliuice/grub2-themes.git
 cd ~
-git clone https://github.com/vinceliuice/grub2-themes.git
+git clone https://github.com/vinceliuice/Elegant-grub2-themes.git --depth=1
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1
 git clone https://github.com/vinceliuice/McMojave-cursors.git --depth=1
 
-# chmod +x $HOME/Elegant-grub2-themes/install.sh
-chmod +x $HOME/grub2-themes/install.sh
+# chmod +x $HOME/grub2-themes/install.sh
+chmod +x $HOME/Elegant-grub2-themes/install.sh
 chmod +x $HOME/WhiteSur-gtk-theme/install.sh
 chmod +x $HOME/WhiteSur-gtk-theme/tweaks.sh
 chmod +x $HOME/WhiteSur-icon-theme/install.sh
@@ -44,9 +44,9 @@ sudo cp -r $SCRIPT_DIR/wallpaper/* /usr/share/wallpapers/
 sudo cp -r $SCRIPT_DIR/wallpaper/* $HOME/.local/share/wallpapers
 
 ## WhiteSur Grub
-# sudo $HOME/Elegant-grub2-themes/install.sh -t mojave -p sharp -i right -c dark -s 2k -b
+sudo $HOME/Elegant-grub2-themes/install.sh -t mojave -p sharp -i right -c dark -s 2k -b
 # -t, --theme     Background theme variant(s) [forest|mojave|mountain|wave] (default is forest)
-$HOME/grub2-themes/install.sh -t whitesur -i whitesur -s 2k -b
+# $HOME/grub2-themes/install.sh -t whitesur -i whitesur -s 2k -b
 
 ## WhiteSur gtk
 $HOME/WhiteSur-gtk-theme/install.sh -c dark -t default -m -l --shell -i apple --round --black --darker
@@ -75,8 +75,8 @@ echo '#################################################################'
 echo 'Install done. Next Remove files'
 echo '#################################################################'
 
-# rm -rf $HOME/Elegant-grub2-themes
-rm -rf $HOME/grub2-themes
+# rm -rf $HOME/grub2-themes
+rm -rf $HOME/Elegant-grub2-themes
 rm -rf $HOME/WhiteSur-gtk-theme
 rm -rf $HOME/WhiteSur-icon-theme
 rm -rf $HOME/McMojave-cursors
