@@ -83,14 +83,14 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B05498B7
 ## Get script directory
 # paste your path to post-install-ubuntu folder
 SCRIPT_DIR=/mnt/d/CRYPTO/post-install-ubuntu
-sudo apt install -y $SCRIPT_DIR/debs/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
 sudo apt install -y $SCRIPT_DIR/debs/ocs-url_3.1.0-0ubuntu1_amd64.deb
-sudo apt install -y $SCRIPT_DIR/debs/figma-linux_0.11.5_linux_amd64.deb
-sudo apt install -y $SCRIPT_DIR/debs/Hiddify-Debian-x64.deb
-sudo apt install -y $SCRIPT_DIR/debs/anilibria_2.2.25_amd64.deb
-sudo apt install -y $SCRIPT_DIR/debs/com.3u.3utools_9.01.003_amd64.deb
-sudo apt install -y $SCRIPT_DIR/debs/drawio-amd64-24.5.3.deb
-sudo apt install -y $SCRIPT_DIR/debs/nekoray-4.0.1-2024-12-12-debian-x64.deb
+# sudo apt install -y $SCRIPT_DIR/debs/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
+# sudo apt install -y $SCRIPT_DIR/debs/figma-linux_0.11.5_linux_amd64.deb
+# sudo apt install -y $SCRIPT_DIR/debs/Hiddify-Debian-x64.deb
+# sudo apt install -y $SCRIPT_DIR/debs/anilibria_2.2.25_amd64.deb
+# sudo apt install -y $SCRIPT_DIR/debs/com.3u.3utools_9.01.003_amd64.deb
+# sudo apt install -y $SCRIPT_DIR/debs/drawio-amd64-24.5.3.deb
+# sudo apt install -y $SCRIPT_DIR/debs/nekoray-4.0.1-2024-12-12-debian-x64.deb
 
 sudo apt install --fix-broken -y
 sudo apt install -y -f
