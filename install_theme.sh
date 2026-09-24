@@ -36,8 +36,9 @@ chmod +x $HOME/McMojave-cursors/install.sh
 # make -C dash-to-dock install
 
 # wallpapers / backgrounds
-# paste your path to wallpaper folder
-SCRIPT_DIR=/mnt/d/CRYPTO/post-install-ubuntu
+SCRIPT_DIR=/tmp/post-install-ubuntu
+rm -rf "$SCRIPT_DIR"
+git clone --depth 1 https://github.com/devslaweekq/post-install-ubuntu.git "$SCRIPT_DIR"
 sudo cp -r $SCRIPT_DIR/wallpaper/* /usr/share/backgrounds/
 sudo cp -r $SCRIPT_DIR/wallpaper/* $HOME/.local/share/backgrounds
 sudo cp -r $SCRIPT_DIR/wallpaper/* /usr/share/wallpapers/

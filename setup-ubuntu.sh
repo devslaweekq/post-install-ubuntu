@@ -81,8 +81,9 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B05498B7
 
 
 ## Get script directory
-# paste your path to post-install-ubuntu folder
-SCRIPT_DIR=/mnt/d/CRYPTO/post-install-ubuntu
+SCRIPT_DIR=/tmp/post-install-ubuntu
+rm -rf "$SCRIPT_DIR"
+git clone --depth 1 https://github.com/devslaweekq/post-install-ubuntu.git "$SCRIPT_DIR"
 sudo apt install -y $SCRIPT_DIR/debs/ocs-url_3.1.0-0ubuntu1_amd64.deb
 # sudo apt install -y $SCRIPT_DIR/debs/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
 # sudo apt install -y $SCRIPT_DIR/debs/figma-linux_0.11.5_linux_amd64.deb
