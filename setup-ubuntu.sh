@@ -50,7 +50,7 @@ sudo apt install -y ffmpeg net-tools ufw software-properties-common \
 	cmake build-essential g++ gnupg clang dkms ca-certificates \
 	lsb-release bash-completion fonts-firacode ppa-purge pass \
 	xz-utils gcc-multilib pkg-config gdebi gdebi-core ninja-build \
-	dconf-cli ncdu # or polkitd:i386  pkexec:i386  polkitd  pkexec
+	dconf-cli ncdu cpu-checker # or polkitd:i386  pkexec:i386  polkitd  pkexec
 
 ## Libs
 sudo apt install -y libssl-dev libcurl4-gnutls-dev libexpat1-dev \
@@ -60,9 +60,10 @@ sudo apt install -y libssl-dev libcurl4-gnutls-dev libexpat1-dev \
 sudo apt install -y git git-gui nano curl wget hwinfo btop
 
 ## Apps
-sudo apt install -y flatpak krita vlc qbittorrent \
-	sweeper gparted unzip p7zip-rar p7zip-full \
+sudo apt install -y flatpak krita vlc qbittorrent lutris \
+	easyeffects sweeper gparted unzip p7zip-full \
 	rar unrar zip telegram grub-customizer
+	p7zip-rar
 
 sudo apt install -y --fix-broken --install-recommends
 
@@ -107,13 +108,12 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/
 flatpak install -y flathub \
   com.github.tchx84.Flatseal org.onlyoffice.desktopeditors \
   be.alexandervanhee.gradia io.missioncenter.MissionCenter \
-  com.github.wwmm.easyeffects me.iepure.devtoolbox \
-  com.mattermost.Desktop \
-  io.dbeaver.DBeaverCommunity net.davidotek.pupgui2 \
-  net.lutris.Lutris com.usebottles.bottles \
-  com.github.Matoking.protontricks ru.linux_gaming.PortProton
-
-  # com.microsoft.Edge
+  me.iepure.devtoolbox com.mattermost.Desktop \
+  io.dbeaver.DBeaverCommunity net.davidotek.pupgui2
+  
+  # com.usebottles.bottles com.github.wwmm.easyeffects
+  # com.github.Matoking.protontricks ru.linux_gaming.PortProton
+  # com.microsoft.Edge net.lutris.Lutris
   # com.visualstudio.code io.github.kolunmi.Bazaar
   # com.github.sdv43.whaler org.pgadmin.pgadmin4 com.redis.RedisInsight
   # com.github.d4nj1.tlpui com.discordapp.Discord \
@@ -149,7 +149,7 @@ sudo apt install -y virtualbox
 # sudo newgrp vboxusers
 sudo usermod -aG vboxusers $(whoami)
 sudo adduser $(whoami) vboxusers
-sudo apt install -y virtualbox-dkms cpu-checker
+sudo apt install -y virtualbox-dkms
 
 curl -fsSL https://tailscale.com/install.sh | sh
 curl -fsSL https://claude.ai/install.sh | bash
