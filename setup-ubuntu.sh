@@ -21,6 +21,7 @@ sudo add-apt-repository -y ppa:kisak/kisak-mesa
 sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
 sudo add-apt-repository -y ppa:atareao/telegram
 sudo add-apt-repository -y ppa:graphics-drivers/ppa
+sudo add-apt-repository ppa:fluhus/gnome-googledrive
 # sudo add-apt-repository -y ppa:obsproject/obs-studio
 sudo add-apt-repository -y multiverse
 sudo add-apt-repository -y universe
@@ -50,7 +51,8 @@ sudo apt install -y ffmpeg net-tools ufw software-properties-common \
 	cmake build-essential g++ gnupg clang dkms ca-certificates \
 	lsb-release bash-completion fonts-firacode ppa-purge pass \
 	xz-utils gcc-multilib pkg-config gdebi gdebi-core ninja-build \
-	dconf-cli ncdu cpu-checker # or polkitd:i386  pkexec:i386  polkitd  pkexec
+	dconf-cli ncdu cpu-checker gnome-online-accounts gvfs
+	# or polkitd:i386  pkexec:i386  polkitd  pkexec
 
 ## Libs
 sudo apt install -y libssl-dev libcurl4-gnutls-dev libexpat1-dev \
@@ -110,7 +112,7 @@ flatpak install -y flathub \
   be.alexandervanhee.gradia io.missioncenter.MissionCenter \
   me.iepure.devtoolbox com.mattermost.Desktop \
   io.dbeaver.DBeaverCommunity net.davidotek.pupgui2
-  
+
   # com.usebottles.bottles com.github.wwmm.easyeffects
   # com.github.Matoking.protontricks ru.linux_gaming.PortProton
   # com.microsoft.Edge net.lutris.Lutris
